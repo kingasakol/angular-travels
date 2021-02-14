@@ -1,0 +1,43 @@
+<div class = "container">
+    <h2> Dodaj nową wycieczkę</h2>
+    <form (ngSubmit) = "onSubmit()">
+        <div class = "form-group">
+            <label>Nazwa</label><label *ngIf = "isNameError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "text" class = "form-control" id="name" required [(ngModel)]="addedTravel.name" name="name">
+        </div>
+        <div class = "form-group">
+            <label>Opis</label><label *ngIf = "isDescriptionError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "text" class = "form-control" id="description" required [(ngModel)]="addedTravel.description" name = "description">
+        </div>
+        <div class = "form-group">
+            <label>Data rozpoczęcia</label><label *ngIf = "isStartTimeError" class = "error-info"> Puste pole !!!</label><label *ngIf = "isDataIntervalError" class = "error-info"> Podano błedną datę</label> <br>
+            <input type = "date" class = "form-control" id = "startTime" required [(ngModel)]="addedTravel.startTime" name = "startTime">
+        </div>
+        <div class = "form-group">
+            <label>Data zakończenia</label><label *ngIf = "isEndTimeError "class = "error-info"> Puste pole !!!</label><label *ngIf = "isDataIntervalError" class = "error-info"> Podano błedną datę</label> <br>
+            <input type = "date" class = "form-control" id = "endTime" required [(ngModel)]="addedTravel.endTime" name = "endTime">
+        </div>
+        <div class = "form-group">
+            <label>Max liczba miejsc</label><label *ngIf = "isMaxPlacesError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "number" class = "form-control" id="maxPlaces" required [(ngModel)]="addedTravel.maxPlaces" name="maxPlaces" min = "1">
+        </div>
+        <div class = "form-group">
+            <label>Cena</label> <label *ngIf = "isQuantityError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "number" class = "form-control" id="quantity" required [(ngModel)]="addedTravel.quantity" name="quantity" min = "1">
+        </div>
+        <div class = "form-group">
+            <label>Kraj</label><label *ngIf = "isCountryError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "text" class = "form-control" id="country" required [(ngModel)]="addedTravel.country" name="country">
+        </div>
+        <div class = "form-group">
+            <label>Zdjęcie</label><label *ngIf = "isLinkError" class = "error-info"> Puste pole !!!</label> <br>
+            <input type = "text" class = "form-control" id="link" required [(ngModel)]="addedTravel.link" name="link">
+        </div>
+
+        <button type = "submit" class = "btn btn-primary submit-button">Dodaj</button>
+    </form>
+</div>
+
+<div class="goToMenu">
+    <button id="menu-btn"><a routerLink="/travels" routerLinkActive="active">Strona główna </a></button>
+</div>

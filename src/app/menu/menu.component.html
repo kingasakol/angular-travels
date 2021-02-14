@@ -1,0 +1,16 @@
+<nav>
+    <div class="button-wrapper">
+    <button class = "goBasket"><a routerLink="/basket" routerLinkActive="active">Koszyk </a></button>
+    <button class="goAddTravel" *ngIf="canAdd()"><a routerLink="/addTravel" routerLinkActive="active" >Dodaj nową wycieczke</a></button>
+    <div *ngIf="authState == null" class="login-wrapper">
+        <button class="goLogin"><a routerLink="/login" routerLinkActive="active">Zaloguj się</a></button>
+    </div>
+    <div *ngIf="authState != null" class="login-wrapper">
+        {{userEmail}}<br>
+        <button class="goLogin" (click)="logOut()">Wyloguj się</button>
+    </div>
+    <div *ngIf="isAdmin()">
+        <button class="goLogin"><a routerLink="/adminPanel" routerLinkActive="active">Panel Admina</a></button>
+    </div>
+</div>
+</nav> 

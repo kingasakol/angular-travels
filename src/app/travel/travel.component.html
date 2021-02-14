@@ -1,0 +1,8 @@
+<app-menu></app-menu>
+<div class = "sum-info" [ngStyle] = "{'background-color': sumOfBookedTravel > 10 ?' rgb(91, 163, 91)' : 'rgb(243, 135, 135)'}">
+    Suma wszystkich zarezerwowanych wycieczek: {{sumOfBookedTravel}}
+</div>
+
+<div *ngFor="let t of travelsList let i = index" class = "container">
+    <app-one-travel [t]='t' [minPrices]="minPrices" [maxPrices]="maxPrices"></app-one-travel>
+</div>

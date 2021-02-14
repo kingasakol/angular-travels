@@ -1,0 +1,11 @@
+.stars-container{
+    float: right;
+}
+
+.star-rating-filled{
+    fill: gold;
+}
+
+.star-rating-blank{
+    fill: #696262;
+}

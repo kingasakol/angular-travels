@@ -1,0 +1,15 @@
+<div class="header">
+    <h1>Panel admina</h1>
+</div>
+
+<div class="radioButtonWrapper">
+    <p>Wybierz sposób przetrzymywania danych: </p>
+    <input type = "radio" value="local" [(ngModel)]="sessionOption">local<br>
+    <input type = "radio" value="session"  [(ngModel)]="sessionOption">session<br>
+    <input type = "radio" value="none"  [(ngModel)]="sessionOption">none<br>
+    <button (click)="changeOption(sessionOption)">Zatwierdź</button>
+    <div class = "info">
+        <p>{{confirmInfo}}</p>
+    </div>
+  
+</div>

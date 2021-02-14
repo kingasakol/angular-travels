@@ -1,0 +1,21 @@
+.goTravelsList{
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.title {
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    font-size: 60px;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 50px;
+    -webkit-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+-moz-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+}

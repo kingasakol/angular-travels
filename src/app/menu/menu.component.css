@@ -1,0 +1,50 @@
+.button-wrapper{
+    min-height: 50px;
+    padding: 20px;
+    border: 5px solid gray;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: rgba(255, 255, 249, 0.79);
+    -webkit-box-shadow: -5px 1px 40px 20px rgba(255,255,255,1);
+    -moz-box-shadow: -5px 1px 40px 20px rgba(255,255,255,1);
+    box-shadow: -5px 1px 40px 20px rgba(255,255,255,1);
+}
+
+nav{
+    margin: 30px;
+}
+
+.goBasket{
+    margin: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgba(45, 45, 0, 0.17);
+}
+
+.goAddTravel{
+    margin: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgba(16, 168, 0, 0.39);
+}
+
+a {
+    text-decoration: none;
+}
+
+.login-wrapper{
+    font-size: 30px;
+    font-style: italic;
+    float: right;
+}
+
+.goLogin{
+    font-size: 20px;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    margin-top: 5px;
+    padding: 5px;
+}

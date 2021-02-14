@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Wycieczka 1",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 1000,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/sJ8g2RP/kraj.jpg"
+    },
+    {
+        "name": "Wycieczka 2",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 2000,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis wycieczki",
+        "link": "https://i.ibb.co/Qk45Mq4/03.jpg"
+    },
+    {
+        "name": "Wycieczka 3",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 3000,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/d292wsS/04.jpg"
+    },
+    {
+        "name": "Wycieczka 4",
+        "country": "Hiszpania",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 1000,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/dG5cXR5/pexels-h-emre-773471.jpg"
+    },
+    {
+        "name": "Wycieczka 5",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 800,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/dK4kRPM/pexels-pixabay-158316.jpg"
+    },
+    {
+        "name": "Wycieczka 6",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 1800,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/TtxRGQ9/derhetr.jpg"
+    },
+    {
+        "name": "Wycieczka 7",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 2200,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/wy3Lv7W/pexels-freestocksorg-190407.jpg"
+    },
+    {
+        "name": "Wycieczka 8",
+        "country": "Polska",
+        "startTime": "29-11-2020",
+        "endTime": "06-12-2020",
+        "quantity": 900,
+        "maxPlaces": 5,
+        "description": "To jest krótki opis naszej wycieczki",
+        "link": "https://i.ibb.co/PZ2yL1F/pexels-aleksandar-pasaric-1134166.jpg"
+    }
+]

@@ -1,0 +1,23 @@
+<div>
+<div class="basket-container">
+    <div class = "header">
+        <h2>
+            Lista wybranych wycieczek
+        </h2>
+    </div>
+        <div *ngFor = "let t of uniqTravelList let i = index" [ngClass] = "{'basket-item': counterTravels[i] > 0}">
+            <div *ngIf = "counterTravels[i] > 0" class = "item-name">
+                {{t.name}}
+            </div>
+            <div *ngIf = "counterTravels[i] > 0" class = "item-number">
+                {{counterTravels[i]}}
+            </div>
+        </div>
+        <div class = "summary-price-footer">
+            <p>Sumaryczna cena za wybrane wycieczki: {{sum | currency: 'PLN':'symbol'}}</p> 
+        </div>
+    </div>
+        <div class="goToMenu">
+            <button id="menu-btn"><a routerLink="/travels" routerLinkActive="active">Strona główna </a></button>
+        </div>
+</div>

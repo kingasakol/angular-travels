@@ -1,0 +1,230 @@
+.sum-info{
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container{
+    border: solid 2px black;
+    margin: 10px;
+    width: 450px;
+    min-height: 300px;
+    float: left;
+    border-radius: 15px;
+}
+
+.title{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    background-color: lightgray;
+    border-bottom: 1px solid gray;
+    border-radius: 15px;
+}
+
+.max-price-title {
+    background-color: rgb(91, 163, 91);
+}
+
+.min-price-title {
+    background-color: rgb(243, 135, 135);
+}
+
+.photo{
+    float: left;
+    height: 300px;
+    width: 300px;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.travel-content{
+    float: right;
+    margin-right: 3px;
+}
+
+.p-country{
+    font-weight: bold;
+}
+
+.p-time{
+    font-size: 12px;
+    color: gray;
+}
+
+.place{
+    border-top: 1px solid lightgray;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.card-footer{
+    background-color: #E0E0E0;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+    -moz-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+    box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+}
+
+.price{
+    padding: 5px;
+    padding-left: 10px;
+    display: inline-block;
+    width: 50%;
+}
+
+.button-wrapper{
+    padding: 5px;
+    padding-left: 10px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.add-button {
+    background-color: green;
+    color: white;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.del-button {
+    background-color: rgb(236, 55, 55);
+    color: white;
+    margin: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.info{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#one-info{
+    background-color: pink;
+}
+
+#other-info {
+    background-color: rgb(138, 191, 226);
+}
+
+#empty-info{
+    background-color: antiquewhite;
+}
+
+.delete-travel-button{
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(156, 50, 50);
+    color: white;
+    height: 30px;
+}
+
+.container-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details-button {
+    float: right;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: darkblue;
+}
+
+a{
+    text-decoration: none;
+}
+h1{
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 15px;
+    -webkit-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+-moz-box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+box-shadow: -2px 1px 10px 4px rgba(255,255,255,1);
+}
+
+.p-country{
+    font-size: 30px;
+}
+
+.p-time, .p-description, .place, .price{
+    font-size: 20px;
+}
+
+.place{
+    margin: 3px;
+}
+
+#header{
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.wrapper{
+    width: 70vw;
+    justify-content: center;
+}
+
+.goToMenu{
+    float: right;
+    margin: 20px;
+}
+
+#menu-btn{
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.updateTravel{
+    background-color:rgba(255, 255, 255, 0.71);
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 80px;
+}
+
+label{
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    border-radius: 15px;
+    padding: 5px;
+    height: 30px;
+    font-size: 20px;
+    width: 200px;
+}
+
+.changeButton {
+    border-radius: 20px;
+    margin: 10px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+}

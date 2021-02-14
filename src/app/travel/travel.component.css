@@ -1,0 +1,57 @@
+.sum-info{
+    height: 50px;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: -2px 1px 10px 4px rgba(0,0,0,1);
+-moz-box-shadow: -2px 1px 10px 4px rgba(0,0,0,1);
+box-shadow: -2px 1px 10px 4px rgba(0,0,0,1);
+}
+
+.container{
+    border: solid 2px black;
+    margin: 10px;
+    min-width: 450px;
+    min-height: 300px;
+    float: left;
+    border-radius: 15px;
+    background-color: #F0FFF0;
+    -webkit-box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 26px -8px rgba(0,0,0,0.75);
+}
+
+.button-wrapper{
+    min-height: 50px;
+    padding: 20px;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 5px;
+    background-color: bisque;
+   
+}
+
+.goBasket{
+    margin: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #FF7256;
+}
+
+.goAddTravel{
+    margin: 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #A2CD5A;
+}
+
+a {
+    text-decoration: none;
+}

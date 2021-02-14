@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <div id="header">
+    <h1>{{travel.name | uppercase}}</h1>
+  </div>
+  <ng-container *ngFor="let star of stars">
+
+    <app-star (starEnter)="onStarEnter($event)" (starLeave)="onStarLeave()" (starClicked)="onStarClicked($event)"
+      [starId]="star" [starsNumber]="travel.stars" [rating]="hoverState || rating"></app-star>
+  </ng-container>
+
+  <div class="content">
+    <div class="photo">
+      <img [src]="travel.link" class="rounded">
+    </div>
+    <div class="travel-content">
+      <p class="p-country">Kraj: {{travel.country | uppercase}}</p>
+      <div class="time">
+        <p class="p-time">{{travel.startTime}} - {{travel.endTime}}</p>
+      </div>
+      <p class="p-description">{{travel.description}}</p>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <div class="place">
+    Places: {{travel.freePlaces}} / {{travel.maxPlaces}}
+  </div>
+  <div class="info" id="one-info" *ngIf="travel.freePlaces == 1">
+    Została jedna wolna wycieczka !
+  </div>
+  <div class="info" id="other-info" *ngIf="travel.freePlaces == 2 || travel.freePlaces == 3">
+    Zostało mało wolnych wycieczek
+  </div>
+  <div class="info" id="empty-info" *ngIf="travel.freePlaces == 0">Wycieczka w całości wyprzedana</div>
+  <div class="card-footer">
+    <div class="price">
+      {{travel.quantity | currency: 'PLN':'symbol'}}
+    </div>
+    <div class="button-wrapper">
+      <button [ngStyle]="{'visibility': travel.freePlaces == 0 ? 'hidden' : 'visible'}" class="add-button"
+        (click)="addTravel()">+</button>
+      <button [ngStyle]="{'visibility': travel.freePlaces == 0 ? 'hidden' : 'visible'}" class="del-button"
+        (click)="removeTravel()">-</button>
+    </div>
+  </div>
+  <div class="goToMenu">
+      <button id="menu-btn"><a routerLink="/travels" routerLinkActive="active">Strona główna </a></button>
+  </div>
+
+  <div class = "updateTravel" *ngIf="canUpdate()">
+    <h1>Modyfikuj wycieczkę</h1>
+    <label>Liczba miejsc</label><br>
+    <input type = "number" id="newPlaces">
+    <button class="changeButton" (click)="updatePlaces()">Zmień</button><br/>
+
+    <label>Cena</label><br>
+    <input type = "number" id="newQuantity">
+    <button class = "changeButton" (click)="updateQuantity()">Zmień</button>
+  </div>
+
+</div>

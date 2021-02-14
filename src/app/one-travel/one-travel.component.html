@@ -1,0 +1,43 @@
+<div *ngIf="canSeeReader()">
+<div class = "title" [ngClass] = "{'max-price-title': t.quantity == maxPrices,'min-price-title': t.quantity == minPrices}">{{t.name | uppercase}} 
+    <button class = "delete-travel-button" (click) = "deleteTravel()" *ngIf="canDelete()">Usuń wycieczkę</button>
+    <button class = "details-button"><a routerLink="/travelDetails/{{t.key}}" routerLinkActive="active">Szczegóły </a></button>
+</div>
+<div class = "content">
+<div class = "photo">
+    <img [src] = "t.link" class = "rounded">
+</div>
+<div class = "travel-content">
+        <p class = "p-country">{{t.country | uppercase}}</p>
+        <div class = "time">
+            <p class = "p-time">{{t.startTime}} - {{t.endTime}}</p>
+        </div>
+        <p class = "p-description">{{t.description}}</p>
+</div>
+<div style = "clear:both"></div>
+</div>
+<div class = "place">
+Places: {{t.freePlaces}} / {{t.maxPlaces}}
+</div>
+<div class = "info" id = "one-info" *ngIf = "t.freePlaces == 1">
+  Została jedna wolna wycieczka !
+</div>
+<div class = "info" id = "other-info" *ngIf = "t.freePlaces == 2 || t.freePlaces == 3">
+Zostało mało wolnych wycieczek
+</div>
+<div class = "info" id = "empty-info" *ngIf = "t.freePlaces == 0">Wycieczka w całości wyprzedana</div>
+<div class = "card-footer">
+<div class = "price">
+    {{t.quantity | currency: 'PLN':'symbol'}}
+</div>
+<div *ngIf="!canSeeVip()" class = "button-wrapper">
+   <button [ngStyle] = "{'visibility': t.freePlaces == 0 ? 'hidden' : 'visible'}" class = "add-button" (click) = "addTravel()">+</button>
+   <button [ngStyle] = "{'visibility': t.freePlaces == 0 ? 'hidden' : 'visible'}"
+    class = "del-button" (click) = "removeTravel()">-</button>
+</div>
+</div>
+</div>
+<div class = "unVisibleTravel" *ngIf="!canSeeReader()">
+        <p id = "unvisibleP">Wycieczka niedostępna</p>
+    
+</div>

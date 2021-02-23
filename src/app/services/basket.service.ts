@@ -24,14 +24,12 @@ export class BasketService {
   }
 
   deleteBasketItem(key: string) {
-    console.log("delete" + key);
     let i = 0;
     let keyToDelete:string;
     this.daneRef.ref.where("travelUid", "==", key).onSnapshot(snap => {
       snap.forEach(basketRef =>{
         if(i == 0){
           keyToDelete = basketRef.id;
-          console.log(keyToDelete + "basketrefdata");
           this.daneRef.doc(keyToDelete).delete();
           i++;
         }
@@ -44,11 +42,14 @@ export class BasketService {
   }
 
   getBookedTravelList(email: string){
+    var listForFilter = new Array();
     this.daneRef.ref.where("email", "==", email).onSnapshot(snap => {
       snap.forEach(basketRef => {
-        this.bookedTravel.push(basketRef.data().travelUid);
-      })
+        listForFilter.push(basketRef.data().travelUid);
+      });
     })
+    
+    return listForFilter;
   }
 
   deleteAll() {

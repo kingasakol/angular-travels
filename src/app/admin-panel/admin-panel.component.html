@@ -7,9 +7,25 @@
     <input type = "radio" value="local" [(ngModel)]="sessionOption">local<br>
     <input type = "radio" value="session"  [(ngModel)]="sessionOption">session<br>
     <input type = "radio" value="none"  [(ngModel)]="sessionOption">none<br>
-    <button (click)="changeOption(sessionOption)">Zatwierdź</button>
+    <button class="confirmButton" (click)="changeOption(sessionOption)">Zatwierdź</button>
     <div class = "info">
         <p>{{confirmInfo}}</p>
     </div>
   
 </div>
+<div>
+    <div id="p-users">
+        Użytkownicy
+    </div>
+    <div *ngFor="let user of usersList; let i = index" class = "usersWrapper">
+        <p id="user-p">{{user.email}}</p> <br>
+        <div class = "rolesWrapper">
+            <div class = "one-role">VIP - {{user.roles.VIP}}<button class="roleButton" (click)="changeRole(user.key, 'VIP')">Zmień</button></div>
+            <div>admin - {{user.roles.admin}}<button class="roleButton" (click)="changeRole(user.key, 'admin')">Zmień</button></div>
+            <div>pracownik - {{user.roles.pracownik}}<button class="roleButton" (click)="changeRole(user.key, 'pracownik')">Zmień</button></div>
+            <div>reader - {{user.roles.reader}}<button class="roleButton" (click)="changeRole(user.key, 'reader')">Zmień</button></div>
+        </div>
+       
+    </div>
+</div>
+

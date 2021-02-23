@@ -81,7 +81,7 @@ export class AuthService {
                     this.currentUser = x.data();
                     this.setUserStatus(this.currentUser);
                 })
-            })
+            });
         });
     }
 

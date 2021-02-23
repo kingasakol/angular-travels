@@ -30,6 +30,7 @@ export class OneTravelComponent implements OnInit {
     if(this.role != undefined){
       this.basketItem.email = this.role.email;
       this.basketItem.travelUid = this.t.key;
+      this.basketItem.name = this.t.name;
     }
   }
 

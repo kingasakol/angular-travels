@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../services/travel.service';
 import { BasketService } from '../services/basket.service';
 
-import { map } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-basket',
@@ -27,57 +27,58 @@ export class BasketComponent implements OnInit {
 
   basketList = new Array();
 
-  constructor(private travelService : TravelService, private basketService: BasketService, private router: Router ) { 
+  userEmail;
+  authState;
+
+  constructor(private travelService : TravelService, private basketService: BasketService, private authService: AuthService) { 
 
   }
 
-   getTravelsList(){
+  getTravelsList(){
+    console.log("pobieram wycieczki");
     this.travelService.getTravelsList().snapshotChanges().pipe(
       map(changes => changes.map(c => ({key : c.payload.doc.id, ...c.payload.doc.data()})))
     ).subscribe((travels: any) => {
       this.travelListFromServices = travels;
-      this.bookedTravelList = new Array();
-      this.basketList = new Array();
-      this.getBookedTravels();
+
+      this.uniqTravelList = new Array();
+      this.counterTravels = new Array();
+
+      this.getChoosedTravels();
+      this.getUniqTravelList();
+      this.getSum();
     },
     (error: HttpErrorResponse) => {
       console.log(error);
     }
     );
-    }
-
-  ngOnInit(): void {
-    this.bookedTravelList = new Array();
-    this.getTravelsList();
   }
 
-  getBookedTravels(){
+  ngOnInit(): void {
+    this.authService.userChanges();
     this.bookedTravelList = new Array();
-    if(this.travelListFromServices != undefined){
-      for(let i = 0; i < this.travelListFromServices.length; i++){
-        
-        if(this.travelListFromServices[i].maxPlaces - this.travelListFromServices[i].freePlaces > 0){
-          if(this.travelListFromServices[i].maxPlaces - this.travelListFromServices[i].freePlaces > 0){
-            for(let j = 0; j < this.travelListFromServices[i].maxPlaces - this.travelListFromServices[i].freePlaces; j++){
-              this.bookedTravelList.push(this.travelListFromServices[i]);
-            }
-          }
-        }
+    this.uniqTravelList = new Array();
+    this.counterTravels = new Array();
+    
+    this.authService.authState$.forEach(e => {
+      this.authState = e;
+      if(e != null){
+        this.userEmail = e.email;
+        this.getTravelsList();
+        this.bookedTravelList = this.basketService.getBookedTravelList(this.userEmail);
       }
-    }
-
-    this.getChoosedTravels();
-    this.getUniqTravelList();
-    this.getSum();
+    });
+   
   }
 
   getChoosedTravels(){
     this.uniqTravelList = new Array();
+    this.counterTravels = new Array();
     if(this.travelListFromServices != undefined){
       this.counterTravels = new Array();
       for(var i = 0; i < this.travelListFromServices.length; i++){
         this.counterTravels.push(0);
-         this.uniqTravelList.push(0);
+        this.uniqTravelList.push(0);
       }
     }
   }
@@ -85,7 +86,7 @@ export class BasketComponent implements OnInit {
   getUniqTravelList(){
     for(var i = 0; i < this.bookedTravelList.length; i++){
       for(var j = 0; j < this.travelListFromServices.length; j++){
-        if(this.bookedTravelList[i].name == this.travelListFromServices[j].name){
+        if(this.bookedTravelList[i] == this.travelListFromServices[j].key){
           this.counterTravels[j]++;
         }
       }
@@ -107,5 +108,26 @@ export class BasketComponent implements OnInit {
         }
       }
     }
+  }
+
+  getTravelPrice(uid: string){
+    var travelsList = new Array();
+    var price;
+
+    this.travelService.getTravelsList().snapshotChanges().pipe(
+      map(changes => changes.map(c => ({key : c.payload.doc.id, ...c.payload.doc.data()})))
+    ).subscribe((travels: any) => {
+      travelsList = travels;
+      travelsList.forEach(function (value){
+        if(value.key == uid){
+          price = value.quantity;
+        }
+      });
+      return price;
+    },
+    (error: HttpErrorResponse) => {
+      console.log(error);
+    }
+    );
   }
 }

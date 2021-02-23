@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TravelService } from '../services/travel.service';
-
 import { ActivatedRoute } from '@angular/router';
 import { Travel } from '../travel/travel';
 import { map } from 'rxjs/operators';

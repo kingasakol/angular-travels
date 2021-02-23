@@ -70,9 +70,6 @@ export class TravelComponent implements OnInit {
       this.authState = e;
       if(e != null && !this.bookedTravelCounted){
         this.userEmail = e.email;
-        this.bookedTraveList = new Array();
-        this.sumOfBookedTravel = 0;
-        this.getSumOfBookedTravel();
       }
     });
    }
@@ -84,7 +81,6 @@ export class TravelComponent implements OnInit {
     this.authService.userChanges();
     this.authService.userStatusChanges.subscribe(x => this.userStatus = x);
     this.role = this.authService.currentUser;
-
     this.getTravelsList();
     this.getMaxMinPrices();
   }
